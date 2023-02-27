@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
+  <display-name>CRUD test</display-name>
+<servlet>
+	<servlet-name>front</servlet-name>					<!--com.dev.controller.FrontController 서블릿을 front 이름으로 웹서버에 등록  --> 
+	<servlet-class>com.dev.controller.FrontController</servlet-class> 
+	<init-param>										<!--com.dev.controller.FrontController 서블릿에 charset=utf-8 변수를 지정  -->
+		<param-name>charset</param-name>
+		<param-value>UTF-8</param-value>
+	</init-param>
+</servlet>
+<servlet-mapping>										<!--front 이름으로 등록된 서블릿은 URL 요청 정보가 .do로 끝나는 요청이 들어올때마다 실행합니다.  -->
+	<servlet-name>front</servlet-name>
+	<url-pattern>*.do</url-pattern>
+</servlet-mapping>
+<welcome-file-list>										<!--클라이언트로부터 요청이 들어왔을때 처음 보여주는 페이지  -->
+<welcome-file>index.jsp</welcome-file>
+</welcome-file-list>
+</web-app>
